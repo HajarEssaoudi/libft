@@ -6,7 +6,7 @@
 /*   By: hajar <hajar@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/01 04:08:10 by hajar             #+#    #+#             */
-/*   Updated: 2024/10/01 15:08:55 by hajar            ###   ########.fr       */
+/*   Updated: 2024/10/02 15:37:17 by hajar            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,5 +28,5 @@ int		ft_isalpha(int c);
 int		ft_isalnum(int c);
 int		ft_atoi(const char *str);
 void	ft_bzero(void *s, size_t n);
-
+char	*ft_strchr(const char *s, int c);
 #endif

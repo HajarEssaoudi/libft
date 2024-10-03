@@ -6,7 +6,7 @@
 /*   By: hajar <hajar@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/01 01:56:28 by hajar             #+#    #+#             */
-/*   Updated: 2024/10/01 14:47:16 by hajar            ###   ########.fr       */
+/*   Updated: 2024/10/03 02:09:34 by hajar            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,17 +14,22 @@
 
 int	ft_isalpha(int c)
 {
-	if ((c >= 65 && c <= 90) || (c >= 97 && c <= 122))
+	if ((c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z'))
 		return (1);
-	return (0);
+	else
+		return (0);
 }
 
 /*
 #include<stdio.h>
 int main ()
 {
-	int c = '7';
-	printf("%d",ft_isalpha(c));
+	int  i = 91;
+    while (i <= 96)
+    {
+        printf("%d",ft_isalpha(i));
+        i++;
+    }
 	return 0;
 }
 */

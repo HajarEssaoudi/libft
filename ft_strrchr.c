@@ -1,32 +1,49 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isdigit.c                                       :+:      :+:    :+:   */
+/*   ft_strrchr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hajar <hajar@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/01 02:19:23 by hajar             #+#    #+#             */
-/*   Updated: 2024/10/02 17:56:09 by hajar            ###   ########.fr       */
+/*   Created: 2024/10/02 22:01:45 by hajar             #+#    #+#             */
+/*   Updated: 2024/10/03 02:12:39 by hajar            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_isdigit(int c)
+char	*ft_strrchr(const char *s, int c)
 {
-	if (c >= 48 && c <= 57)
-		return (1);
-	else
-		return (0);
+	char	*str;
+	char	*tmp;
+	int		i;
+	int		j;
+
+	i = 0;
+	j = -1;
+	str = (char *)s;
+	if (c > 255)
+		c = c % 256;
+	while (*str)
+	{
+		if (*str == (char)c)
+		{
+			tmp++;
+			tmp = str;
+		}
+		str++;
+	}
+	if (c == '\0')
+		return (str);
+	return (tmp);
 }
 
 /*
 #include<stdio.h>
-int main ()
+#include<string.h>
+int main()
 {
-	int c = 'z';
-	printf("%d",ft_isdigit(c));
-	return 0;
+	printf("%p\n", ft_strrchr("hajar",'\0'));
+	printf("%p\n", strrchr("hajar",'\0'));
 }
-
 */

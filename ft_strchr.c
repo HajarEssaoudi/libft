@@ -1,32 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isdigit.c                                       :+:      :+:    :+:   */
+/*   ft_strchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hajar <hajar@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/01 02:19:23 by hajar             #+#    #+#             */
-/*   Updated: 2024/10/02 17:56:09 by hajar            ###   ########.fr       */
+/*   Created: 2024/10/02 15:05:26 by hajar             #+#    #+#             */
+/*   Updated: 2024/10/02 22:27:05 by hajar            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_isdigit(int c)
+char	*ft_strchr(const char *s, int c)
 {
-	if (c >= 48 && c <= 57)
-		return (1);
-	else
-		return (0);
+	char	*str;
+
+	str = (char *)s;
+	if (c > 255)
+		c = c % 256;
+	while (*str)
+	{
+		if (*str == (char)c)
+			return (str);
+		str++;
+	}
+	if (c == '\0')
+		return (str);
+	return (NULL);
 }
 
 /*
 #include<stdio.h>
-int main ()
+#include<string.h>
+int main()
 {
-	int c = 'z';
-	printf("%d",ft_isdigit(c));
-	return 0;
+	printf("%p\n", ft_strchr("hajar",'a'));
+	printf("%p\n", strchr("hajar",'a'));
 }
-
 */
