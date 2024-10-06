@@ -6,7 +6,7 @@
 /*   By: hajar <hajar@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/02 20:58:29 by hajar             #+#    #+#             */
-/*   Updated: 2024/10/03 02:12:16 by hajar            ###   ########.fr       */
+/*   Updated: 2024/10/06 20:53:47 by hajar            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ int	ft_strncmp(const char *s1, const char *s2, size_t n)
 	size_t	i;
 
 	i = 0;
-	while (i < n && *s1 && *s2 & *s1 == *s2)
+	while (i < n && *s1 && *s2 && (*s1 == *s2))
 	{
 		s1++;
 		s2++;
