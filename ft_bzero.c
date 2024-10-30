@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_bzero.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hajar <hajar@student.42.fr>                +#+  +:+       +#+        */
+/*   By: hes-saou <hes-saou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/01 04:08:10 by hajar             #+#    #+#             */
-/*   Updated: 2024/10/01 15:16:05 by hajar            ###   ########.fr       */
+/*   Created: 2024/10/24 14:04:25 by hes-saou          #+#    #+#             */
+/*   Updated: 2024/10/24 15:39:37 by hes-saou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,47 +14,39 @@
 
 void	ft_bzero(void *s, size_t n)
 {
-	char	*ptr;
+	char	*str;
 	size_t	i;
 
 	i = 0;
-	ptr = (char *)s;
+	str = s;
 	while (i < n)
 	{
-		ptr[i] = 0;
+		str[i] = 0;
 		i++;
 	}
 }
 
-/*
-
-#include<stdio.h>
-#include <string.h>
-
-int main() {
-	char buffer[5];
-	char buffer2[5];
-	int i = 0;
-	
-	// Initialize buffers
-	bzero(buffer, sizeof(buffer));
-	ft_bzero(buffer2, sizeof(buffer2));
-	
-	// Print contents of buffer initialized by bzero
-	printf("Buffer from bzero: ");
-	while (i < sizeof(buffer)) {
-		printf("%d ", buffer[i]);
-		i++;
-	}
-
-	i = 0;  // Reset index for second buffer
-	printf("\nBuffer2 from ft_bzero: ");
-	while (i < sizeof(buffer2)) {
-		printf("%d ", buffer2[i]);
-		i++;
-	}
-	
-	return 0;
-}
-
-*/
+// #include <string.h>
+// #include <stdio.h>
+// int main() {
+// 	char buffer[5] = "hajar";
+//     char buffer2[5] = "hajar";
+// 	int i = 0;	
+// 	bzero(buffer, 2);	
+// 	printf("Buffer from bzero: ");
+// 	while (i < 5) {
+// 		printf("%c", buffer[i]);
+// 		i++;
+// 	}
+// 	printf("\n");
+//
+//     i = 0;
+//     printf("Buffer from ft_bzero: ");
+//     ft_bzero(buffer2, 2);
+// 	while (i < 5) {
+// 		printf("%c", buffer2[i]);
+// 		i++;
+// 	}
+// 	printf("\n");
+// 	return 0;
+// }

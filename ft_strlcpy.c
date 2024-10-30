@@ -3,51 +3,40 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strlcpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hajar <hajar@student.42.fr>                +#+  +:+       +#+        */
+/*   By: hes-saou <hes-saou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/04 17:34:50 by hajar             #+#    #+#             */
-/*   Updated: 2024/10/05 18:04:43 by hajar            ###   ########.fr       */
+/*   Created: 2024/10/25 18:46:33 by hes-saou          #+#    #+#             */
+/*   Updated: 2024/10/26 09:57:33 by hes-saou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
 
 size_t	ft_strlcpy(char *dst, const char *src, size_t size)
 {
 	size_t	i;
+	size_t	j;
 
+	j = 0;
 	i = 0;
-	if(size > 0)
+	while (src[j])
+		j++;
+	if (size == 0)
+		return (j);
+	while (src[i] && i < size - 1)
 	{
-		while(src[i] && i < size - 1)
-		{
-			dst[i] = src[i];
-			i++;
-		}
-	dst[i] = '\0';
-	}
-	while (src[i])
+		dst[i] = src[i];
 		i++;
-	return (i);
+	}
+	return (j);
 }
 
-/*
-int main()
-{
-	char dst[2];
-	const char src[5] = "Hajar";
-	
-	printf("%zu",ft_strlcpy(dst, src, 5));
-	printf("%s", dst);
-	
-	size_t i = 0;
-	while(i < 5)
-	{
-        if (dst[i] == '\0') 
-            printf("%s", "oui");
-    i++;
-	}
-   	return 0;
-}
-*/
+// #include <stdio.h>
+// #include<string.h>
+// int main ()
+// {
+// 	char dst[12];
+// 	const char src[] ="Hajar1 Hajar2";
+// 	int j = ft_strlcpy(dst, src, 6);
+// 	printf("%d, %s\n", j, dst);
+// }

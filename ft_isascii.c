@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_isascii.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hajar <hajar@student.42.fr>                +#+  +:+       +#+        */
+/*   By: hes-saou <hes-saou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/01 03:06:21 by hajar             #+#    #+#             */
-/*   Updated: 2024/10/01 14:47:20 by hajar            ###   ########.fr       */
+/*   Created: 2024/10/23 16:11:28 by hes-saou          #+#    #+#             */
+/*   Updated: 2024/10/23 19:02:46 by hes-saou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,11 +19,10 @@ int	ft_isascii(int c)
 	return (0);
 }
 
-/*
-#include<stdio.h>
-int main ()
-{
-	printf("%d",ft_isascii(126));
-	return 0;
-}
-*/
+// #include<stdio.h>
+// #include<ctype.h>
+// int main()
+// {
+// 	printf("%d\n", ft_isascii(128));
+// 	printf("%d\n", isascii(128));
+// }

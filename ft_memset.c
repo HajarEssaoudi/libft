@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memset.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hajar <hajar@student.42.fr>                +#+  +:+       +#+        */
+/*   By: hes-saou <hes-saou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/01 03:47:08 by hajar             #+#    #+#             */
-/*   Updated: 2024/10/01 14:49:12 by hajar            ###   ########.fr       */
+/*   Created: 2024/10/24 12:18:59 by hes-saou          #+#    #+#             */
+/*   Updated: 2024/10/25 17:52:35 by hes-saou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,42 +14,27 @@
 
 void	*ft_memset(void *s, int c, size_t n)
 {
+	char	*str;
 	size_t	i;
-	char	*ptr;
 
 	i = 0;
-	ptr = s;
+	str = s;
 	while (i < n)
 	{
-		ptr[i] = (char)c;
+		str[i] = (unsigned char)c;
 		i++;
 	}
-	return (s);
+	return (str);
 }
 
-/*
-
-#include <stdio.h>
-#include <string.h>
-
-int main() {
-    char buffer[5];
-	char buffer2[5];
-	int i = 0;
-	int j = 0;
-	
-    memset(buffer, 'A', sizeof(buffer));
-	ft_memset(buffer2, 'B', sizeof(buffer2));
-	
-    while (i < sizeof(buffer)) {
-        printf("%c ", buffer[i]);
-		i++;
-    }
-	while (j < sizeof(buffer2)) {
-        printf("%c ", buffer2[j]);
-		j++;
-    }
-    return 0;
-}
-
-*/
+// #include <stdio.h>
+// #include <string.h>
+// int main ()
+// {
+// 	char str[10] = "hajaress";
+// 	ft_memset(str, '5' , 5);
+// 	printf("ft_memset(): %s\n", str);
+// 	char str1[10] = "hajaress";
+// 	memset(str, '5' , 5);
+// 	printf("memset(): %s\n", str);
+// }

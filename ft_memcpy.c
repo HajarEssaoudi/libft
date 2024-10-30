@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hajar <hajar@student.42.fr>                +#+  +:+       +#+        */
+/*   By: hes-saou <hes-saou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/01 16:38:01 by hajar             #+#    #+#             */
-/*   Updated: 2024/10/02 15:25:43 by hajar            ###   ########.fr       */
+/*   Created: 2024/10/24 15:40:25 by hes-saou          #+#    #+#             */
+/*   Updated: 2024/10/25 16:46:11 by hes-saou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,48 +14,30 @@
 
 void	*ft_memcpy(void *dest, const void *src, size_t n)
 {
+	char		*d;
+	const char	*s;
 	size_t		i;
-	char		*pdest;
-	const char	*psrc;
 
+	s = src;
+	d = dest;
 	i = 0;
-	pdest = (char *)dest;
-	psrc = (const char *)src;
 	while (i < n)
 	{
-		pdest[i] = psrc[i];
+		d[i] = s[i];
 		i++;
 	}
 	return (dest);
 }
-/*
 
 #include <stdio.h>
 #include <string.h>
-#include<unistd.h>
 
 int main() {
-	char src[] = "Hello, World!";
-	char dest1[20];
-	char dest2[20];
+    char data[] = "123456789";
 
-	memcpy(dest1, src, strlen(src) + 1);
-
-	char *dest12 = (char *)dest1 ;
-	while(*dest12)
-	{
-		write(1, dest12, 1);
-		dest12++;
-	}
+    printf("%s\n", ft_memcpy(data + 2 , data, 3));
 	
-	ft_memcpy(dest2, src, strlen(src) + 1);
-	
-	char *dest22 = (char *)dest2 ;
-	while(*dest22)
-	{
-		write(1, dest22, 1);
-		dest22++;
-	}
-	return 0;
+	 char data1[] = "123456789";
+    printf("%s\n", memcpy(data1 + 2 , data1, 3));
+    return 0;
 }
-*/

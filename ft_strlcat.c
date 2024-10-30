@@ -3,50 +3,63 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strlcat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hajar <hajar@student.42.fr>                +#+  +:+       +#+        */
+/*   By: hes-saou <hes-saou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/05 15:15:24 by hajar             #+#    #+#             */
-/*   Updated: 2024/10/06 19:07:55 by hajar            ###   ########.fr       */
+/*   Created: 2024/10/26 10:06:21 by hes-saou          #+#    #+#             */
+/*   Updated: 2024/10/26 13:59:49 by hes-saou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
+size_t	ft_strlen(const char *s)
+{
+	int	i;
+
+	i = 0;
+	while (s[i])
+		i++;
+	return (i);
+}
+
 size_t	ft_strlcat(char *dst, const char *src, size_t size)
 {
-	size_t	d_len;
-	size_t	s_len;
+	size_t	dlen;
+	size_t	slen;
 	size_t	i;
 	size_t	j;
 
-	d_len = 0;
-	while(dst[d_len])
-		d_len++;
-	s_len = 0;
-	while (src[s_len])
-		s_len++;
-	if (d_len >= size)
-		return (size + s_len);
+	dlen = ft_strlen(dst);
+	slen = ft_strlen(src);
 	i = 0;
-	j = d_len;
-	while(src[i] && (j < size -1))
+	j = dlen;
+	
+	if (size <= dlen)
+		return (size + slen);
+	while (src[i] && j < size - 1)
 	{
 		dst[j] = src[i];
-		i++;
 		j++;
+		i++;
 	}
-	if (j < size)
-		dst[j] = '\0';
-	return (d_len + s_len);
+
+	dst[j] = '\0';
+	return(dlen + slen);
 }
 
-/*
-#include <stdio.h>
+// #include <stdio.h>
+// #include <string.h>
 
-int main()
-{
-	char d[15] = "Hajar ";
-	const char *s = "Essaoudi";
-	printf("%zu\n", ft_strlcat(d, s, 15));
-	printf("%s\n", d);
-}*/
+// int main() {
+//     char dest[20] = "Hello";
+//     char *src = " World!";
+
+//     // Concatenate src to dest with strlcat
+//     size_t result = ft_strlcat(dest, src, 13);
+
+//     printf("Resulting string: '%s'\n", dest);
+//     printf("Total length tried to create: %zu\n", result);
+
+//     return 0;
+// }
+

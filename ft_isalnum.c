@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_isalnum.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hajar <hajar@student.42.fr>                +#+  +:+       +#+        */
+/*   By: hes-saou <hes-saou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/01 02:24:11 by hajar             #+#    #+#             */
-/*   Updated: 2024/10/01 15:18:06 by hajar            ###   ########.fr       */
+/*   Created: 2024/10/23 16:06:31 by hes-saou          #+#    #+#             */
+/*   Updated: 2024/10/23 19:02:52 by hes-saou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,16 +14,15 @@
 
 int	ft_isalnum(int c)
 {
-	if (((c >= 65 && c <= 90) || (c >= 97 && c <= 122)) || (c >= 48 && c <= 57))
-		return (1);
+	if (((c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z')) || (c >= '0' && c <= '9'))
+		return (8);
 	return (0);
 }
 
-/*
-#include<stdio.h>
-int main ()
-{
-	printf("%d",ft_isalnum('3'));
-	return 0;
-}
-*/
+// #include<stdio.h>
+// #include <ctype.h>
+// int main()
+// {
+// 	printf("%d\n", ft_isalnum(65));
+// 	printf("%d\n",isalnum(65));
+// }

@@ -3,43 +3,42 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hajar <hajar@student.42.fr>                +#+  +:+       +#+        */
+/*   By: hes-saou <hes-saou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/02 20:33:39 by hajar             #+#    #+#             */
-/*   Updated: 2024/10/03 02:11:37 by hajar            ###   ########.fr       */
+/*   Created: 2024/10/26 21:53:15 by hes-saou          #+#    #+#             */
+/*   Updated: 2024/10/28 14:37:13 by hes-saou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_memcmp(const void *s1, const void *s2, size_t n)
+int ft_memcmp(const void *s1, const void *s2, size_t n)
 {
-	unsigned char	*str1;
-	unsigned char	*str2;
-	size_t			i;
+    size_t	i;
+    unsigned const char *ss1;
+    unsigned const char *ss2;
 
-	str1 = (unsigned char *)s1;
-	str2 = (unsigned char *)s2;
+    ss1 = (const unsigned char *)s1;
+    ss2 = (const unsigned char *)s2;
 	i = 0;
-	while (i < n && *str1 && *str2 && *str1 == *str2)
+	while(i < n)
 	{
-		str1++;
-		str2++;
+		if (ss1[i] != ss2[i])
+		{
+			return (ss1[i] - ss2[i]);
+		}
 		i++;
 	}
-	if (i == n)
-		return (0);
-	return (*str1 - *str2);
+	return (0);
 }
 
-/*
-#include<stdio.h>
-#include<string.h>
-int main()
-{
-	unsigned char s1[] = "";
-	unsigned char *s2 = "";
-	printf("%d\n", ft_memcmp(s1, s2, 2));
-	printf("%d\n", memcmp(s1, s2, 2));
-}
-*/
+// #include <stdio.h>
+// #include <string.h>
+
+// int main()
+// {
+//     int i = ft_memcmp("hajar", "hajar1", 6);
+//     int j = memcmp("hajar", "hajar1", 6);
+//     printf("%d\n%d\n", i, j);
+// }
+

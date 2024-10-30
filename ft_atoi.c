@@ -3,51 +3,43 @@
 /*                                                        :::      ::::::::   */
 /*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hajar <hajar@student.42.fr>                +#+  +:+       +#+        */
+/*   By: hes-saou <hes-saou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/01 03:45:22 by hajar             #+#    #+#             */
-/*   Updated: 2024/10/01 14:46:58 by hajar            ###   ########.fr       */
+/*   Created: 2024/10/24 11:18:44 by hes-saou          #+#    #+#             */
+/*   Updated: 2024/10/24 15:38:47 by hes-saou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-
-int	ft_atoi(const char *str)
+int	ft_atoi(const char *nptr)
 {
-	int	i;
-	int	res;
-	int	ichara;
+	char	*ptr;
+	int		i;
+	int		sign;
+	int		result;
 
-	res = 0;
-	ichara = 1;
 	i = 0;
-	while ((str[i] >= 9 && str[i] <= 13) || str[i] == 32)
+	sign = 1;
+	result = 0;
+	ptr = (char *)nptr;
+	while ((ptr[i] >= 9 && ptr[i] <= 13) || ptr[i] == 32)
 		i++;
-	if (str[i] == '-')
+	if (ptr[i] == '-')
 	{
-		ichara = -ichara;
+		sign = -sign;
 		i++;
 	}
-	else if (str[i] == '+')
+	else if (ptr[i] == '+')
+		i++;
+	while (ptr[i] >= '0' && ptr[i] <= '9')
 	{
+		result = result * 10 + ptr[i] - '0';
 		i++;
 	}
-	while ((str[i] >= '0' && str[i] <= '9'))
-	{
-		res = res * 10 + (str[i] - '0');
-		i++;
-	}
-	return (ichara * res);
+	return (sign * result);
 }
 
-/*
-#include <stdio.h>
-#include <stdlib.h>
-
-int main() {
-	printf("The integer value is: %d\n", atoi("--12345"));
-	printf("The integer value is: %d\n", ft_atoi("+12345"));
-	return 0;
-}
-
-*/
+// #include<stdio.h>
+// int main ()
+// {
+// 	printf("%d\n", ft_atoi("-+57851"));
+// }

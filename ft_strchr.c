@@ -3,39 +3,34 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hajar <hajar@student.42.fr>                +#+  +:+       +#+        */
+/*   By: hes-saou <hes-saou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/02 15:05:26 by hajar             #+#    #+#             */
-/*   Updated: 2024/10/02 22:27:05 by hajar            ###   ########.fr       */
+/*   Created: 2024/10/26 14:35:21 by hes-saou          #+#    #+#             */
+/*   Updated: 2024/10/26 16:03:34 by hes-saou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strchr(const char *s, int c)
+char *ft_strchr(const char *s, int c)
 {
-	char	*str;
-
-	str = (char *)s;
-	if (c > 255)
-		c = c % 256;
-	while (*str)
+	while (*s)
 	{
-		if (*str == (char)c)
-			return (str);
-		str++;
+		if (*s == c)
+		{
+			return ((char *)s);
+		}
+	s++;
 	}
 	if (c == '\0')
-		return (str);
+		return ((char *)s);
 	return (NULL);
 }
 
-/*
-#include<stdio.h>
-#include<string.h>
-int main()
-{
-	printf("%p\n", ft_strchr("hajar",'a'));
-	printf("%p\n", strchr("hajar",'a'));
-}
-*/
+// #include <stdio.h>
+// #include <string.h>
+// int main()
+// {
+// 	printf("%d\n", ft_strchr("hajar", 'p'));
+// 	printf("%d\n", strchr("hajar", 'p'));
+// }

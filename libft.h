@@ -3,30 +3,18 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hajar <hajar@student.42.fr>                +#+  +:+       +#+        */
+/*   By: hes-saou <hes-saou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/01 04:08:10 by hajar             #+#    #+#             */
-/*   Updated: 2024/10/02 15:37:17 by hajar            ###   ########.fr       */
+/*   Created: 2024/10/23 17:56:55 by hes-saou          #+#    #+#             */
+/*   Updated: 2024/10/30 15:52:39 by hes-saou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBFT_H
-# define LIBFT_H
-
-#include <unistd.h>
 #include <stddef.h>
 #include <stdlib.h>
-
-int		ft_toupper(int c);
-int		ft_tolower(int c);
-size_t	ft_strlen(const char *str);
-void	*ft_memset(void *s, int c, size_t n);
-int		ft_isprint(int c);
-int		ft_isdigit(int c);
-int		ft_isascii(int c);
 int		ft_isalpha(int c);
+int		ft_isdigit(int c);
 int		ft_isalnum(int c);
-int		ft_atoi(const char *str);
-void	ft_bzero(void *s, size_t n);
-char	*ft_strchr(const char *s, int c);
-#endif
+int		ft_isascii(int c);
+int		ft_isprint(int c);
+size_t	ft_strlen(const char *s);

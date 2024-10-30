@@ -1,30 +1,51 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_tolower.c                                       :+:      :+:    :+:   */
+/*   ft_strjoin.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hes-saou <hes-saou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/23 19:03:22 by hes-saou          #+#    #+#             */
-/*   Updated: 2024/10/24 15:36:03 by hes-saou         ###   ########.fr       */
+/*   Created: 2024/10/29 12:54:07 by hes-saou          #+#    #+#             */
+/*   Updated: 2024/10/29 13:12:13 by hes-saou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_tolower(int c)
+#include "libft.h"
+
+char *ft_strjoin(char const *s1, char const *s2)
 {
-	if (c >= 'A' && c <= 'Z')
+	int	i;
+	int	j;
+	char *p;
+
+	i = 0;
+	j = 0;
+	while (s1[i])
+		i++;
+	while(s2[j])
+		j++;
+	p = (char *)malloc(i + j + 1);
+	if (!p)
+		return (NULL);
+	i = 0;
+	j = 0;
+	while(s1[i])
 	{
-		c += 32;
-		return (c);
+		p[i] = s1[i];
+		i++;
 	}
-	else
+	while (s2[j])
 	{
-		return (c);
+		p[i] = s2[j];
+		i++;
+		j++;
 	}
+	p[i] = '\0';
+	return (p);
 }
 
 // #include <stdio.h>
-// int main()
+// int main ()
 // {
-// 	printf("%c\n", ft_tolower('W'));
+// 	printf("%s\n", ft_strjoin("hajar", "es"));
 // }

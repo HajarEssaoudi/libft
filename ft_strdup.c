@@ -1,30 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_tolower.c                                       :+:      :+:    :+:   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hes-saou <hes-saou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/23 19:03:22 by hes-saou          #+#    #+#             */
-/*   Updated: 2024/10/24 15:36:03 by hes-saou         ###   ########.fr       */
+/*   Created: 2024/10/28 17:38:26 by hes-saou          #+#    #+#             */
+/*   Updated: 2024/10/29 13:19:42 by hes-saou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_tolower(int c)
+#include "libft.h"
+
+char	*ft_strdup(const char *s)
 {
-	if (c >= 'A' && c <= 'Z')
+	char	*ss;
+	int		len;
+	int		i;
+
+	i = 0;
+	len = 0;
+	while (s[len])
+		len++;
+	ss = (char *)malloc(len + 1);
+	if (!ss)
+		return (NULL);
+	while(i < len)
 	{
-		c += 32;
-		return (c);
+		ss[i] = s[i];
+		i++;
 	}
-	else
-	{
-		return (c);
-	}
+	return (ss);
 }
 
 // #include <stdio.h>
 // int main()
 // {
-// 	printf("%c\n", ft_tolower('W'));
+// 	printf("%s\n",ft_strdup("hajar"));
 // }
