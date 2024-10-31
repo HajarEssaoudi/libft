@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: hes-saou <hes-saou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/29 14:41:00 by hes-saou          #+#    #+#             */
-/*   Updated: 2024/10/30 20:27:59 by hes-saou         ###   ########.fr       */
+/*   Created: 2024/10/31 23:06:34 by hes-saou          #+#    #+#             */
+/*   Updated: 2024/10/31 23:06:37 by hes-saou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,7 @@ static char	*alloc_word(const char **s, char c)
 	int		j;
 	char	*word;
 
-	word = malloc(lenc(*s, c) + 1);
+	word = (char *) malloc(lenc(*s, c) + 1);
 	j = 0;
 	if (!word)
 		return (NULL);

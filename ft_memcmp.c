@@ -6,22 +6,22 @@
 /*   By: hes-saou <hes-saou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/26 21:53:15 by hes-saou          #+#    #+#             */
-/*   Updated: 2024/10/28 14:37:13 by hes-saou         ###   ########.fr       */
+/*   Updated: 2024/10/31 23:13:09 by hes-saou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int ft_memcmp(const void *s1, const void *s2, size_t n)
+int	ft_memcmp(const void *s1, const void *s2, size_t n)
 {
-    size_t	i;
-    unsigned const char *ss1;
-    unsigned const char *ss2;
+	size_t				i;
+	unsigned const char	*ss1;
+	unsigned const char	*ss2;
 
-    ss1 = (const unsigned char *)s1;
-    ss2 = (const unsigned char *)s2;
+	ss1 = (const unsigned char *)s1;
+	ss2 = (const unsigned char *)s2;
 	i = 0;
-	while(i < n)
+	while (i < n)
 	{
 		if (ss1[i] != ss2[i])
 		{
@@ -41,4 +41,3 @@ int ft_memcmp(const void *s1, const void *s2, size_t n)
 //     int j = memcmp("hajar", "hajar1", 6);
 //     printf("%d\n%d\n", i, j);
 // }
-

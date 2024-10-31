@@ -1,39 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncmp.c                                       :+:      :+:    :+:   */
+/*   ft_putendl_fd.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hes-saou <hes-saou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/25 17:25:52 by hes-saou          #+#    #+#             */
-/*   Updated: 2024/10/31 23:18:16 by hes-saou         ###   ########.fr       */
+/*   Created: 2024/10/31 22:18:19 by hes-saou          #+#    #+#             */
+/*   Updated: 2024/10/31 22:48:34 by hes-saou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
+#include "libft.h"
 
-int	ft_strncmp(const char *s1, const char *s2, size_t n)
+void	ft_putendl_fd(char *s, int fd)
 {
-	size_t	i;
-
-	i = 0;
-	while (s1[i] && s2[i] && i < n)
+	while (*s)
 	{
-		if (s1[i] != s2[i])
-		{
-			return ((unsigned char)s1[i] - (unsigned char)s2[i]);
-		}
-		i++;
+		write (fd, s, 1);
+		s++;
 	}
-	if (i == n)
-		return (0);
-	return ((unsigned char)s1[i] - (unsigned char)s2[i]);
+	write (fd, "\n", 1);
 }
-
+// #include <fcntl.h>
+// #include <unistd.h>
 // #include <stdio.h>
 // int main()
 // {
-// 	int i = ft_strncmp("hajar", "hajar1", 6);
-// 	int j = strncmp("hajar", "hajar1", 6);
-// 	printf("%d\n%d\n", i, j);
+// 	int fd = open("apah.txt", O_WRONLY | O_CREAT | O_TRUNC, 0644);
+// 	if (fd == -1)
+// 	{
+// 		perror("Error opening file");
+// 		return 1;
+// 	}
+// 	ft_putendl_fd("Hello, world!hgtht", fd); 
+// 	close(fd);
+// 	return 0;
 // }

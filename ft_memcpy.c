@@ -6,7 +6,7 @@
 /*   By: hes-saou <hes-saou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/24 15:40:25 by hes-saou          #+#    #+#             */
-/*   Updated: 2024/10/25 16:46:11 by hes-saou         ###   ########.fr       */
+/*   Updated: 2024/10/31 23:23:16 by hes-saou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,15 +29,12 @@ void	*ft_memcpy(void *dest, const void *src, size_t n)
 	return (dest);
 }
 
-#include <stdio.h>
-#include <string.h>
-
-int main() {
-    char data[] = "123456789";
-
-    printf("%s\n", ft_memcpy(data + 2 , data, 3));
-	
-	 char data1[] = "123456789";
-    printf("%s\n", memcpy(data1 + 2 , data1, 3));
-    return 0;
-}
+// #include <stdio.h>
+// #include <string.h>
+// int main() {
+//     char data[] = "123456789";
+//     printf("%s\n", ft_memcpy(data + 2 , data, 3));	
+// 	 char data1[] = "123456789";
+//     printf("%s\n", memcpy(data1 + 2 , data1, 3));
+//     return 0;
+// }

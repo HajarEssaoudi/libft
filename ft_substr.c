@@ -6,7 +6,7 @@
 /*   By: hes-saou <hes-saou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/28 20:28:15 by hes-saou          #+#    #+#             */
-/*   Updated: 2024/10/30 15:56:00 by hes-saou         ###   ########.fr       */
+/*   Updated: 2024/10/31 23:09:55 by hes-saou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	p = (char *)malloc(len + 1);
 	if (!p)
 		return (NULL);
-	while(s[i])
+	while (s[i])
 	{
 		if (i == start)
 		{

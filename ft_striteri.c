@@ -1,39 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncmp.c                                       :+:      :+:    :+:   */
+/*   ft_striteri.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hes-saou <hes-saou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/25 17:25:52 by hes-saou          #+#    #+#             */
-/*   Updated: 2024/10/31 23:18:16 by hes-saou         ###   ########.fr       */
+/*   Created: 2024/10/31 17:44:49 by hes-saou          #+#    #+#             */
+/*   Updated: 2024/10/31 22:51:03 by hes-saou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
-
-int	ft_strncmp(const char *s1, const char *s2, size_t n)
+void	ft_striteri(char *s, void (*f)(unsigned int, char*))
 {
-	size_t	i;
+	unsigned int	i;
 
 	i = 0;
-	while (s1[i] && s2[i] && i < n)
+	while (*s)
 	{
-		if (s1[i] != s2[i])
-		{
-			return ((unsigned char)s1[i] - (unsigned char)s2[i]);
-		}
+		f (i, s);
 		i++;
+		s++;
 	}
-	if (i == n)
-		return (0);
-	return ((unsigned char)s1[i] - (unsigned char)s2[i]);
 }
 
+void	f(unsigned int index, char *c)
+{
+	*c = 'a';
+}
 // #include <stdio.h>
 // int main()
 // {
-// 	int i = ft_strncmp("hajar", "hajar1", 6);
-// 	int j = strncmp("hajar", "hajar1", 6);
-// 	printf("%d\n%d\n", i, j);
+// 	int i = 0;
+// 	char s[6] = "hajar";
+// 	ft_striteri(s, f);
+// 	printf("%s\n", s);
 // }

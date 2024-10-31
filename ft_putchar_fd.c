@@ -1,39 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncmp.c                                       :+:      :+:    :+:   */
+/*   ft_putchar_fd.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hes-saou <hes-saou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/25 17:25:52 by hes-saou          #+#    #+#             */
-/*   Updated: 2024/10/31 23:18:16 by hes-saou         ###   ########.fr       */
+/*   Created: 2024/10/31 21:04:03 by hes-saou          #+#    #+#             */
+/*   Updated: 2024/10/31 22:50:29 by hes-saou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
+#include "libft.h"
 
-int	ft_strncmp(const char *s1, const char *s2, size_t n)
+void	ft_putchar_fd(char c, int fd)
 {
-	size_t	i;
-
-	i = 0;
-	while (s1[i] && s2[i] && i < n)
-	{
-		if (s1[i] != s2[i])
-		{
-			return ((unsigned char)s1[i] - (unsigned char)s2[i]);
-		}
-		i++;
-	}
-	if (i == n)
-		return (0);
-	return ((unsigned char)s1[i] - (unsigned char)s2[i]);
+	write(fd, &c, 1);
 }
-
 // #include <stdio.h>
 // int main()
 // {
-// 	int i = ft_strncmp("hajar", "hajar1", 6);
-// 	int j = strncmp("hajar", "hajar1", 6);
-// 	printf("%d\n%d\n", i, j);
+//     int fd1 = open("apah.txt", O_ASYNC); 
+//     close(fd1); 	
+//     printf("fd1 = % d\n", fd1); 
 // }

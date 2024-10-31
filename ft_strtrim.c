@@ -6,13 +6,13 @@
 /*   By: hes-saou <hes-saou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/29 13:22:01 by hes-saou          #+#    #+#             */
-/*   Updated: 2024/10/30 02:29:51 by hes-saou         ###   ########.fr       */
+/*   Updated: 2024/10/31 23:07:28 by hes-saou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int is_set(char c, char const *set)
+static int	is_set(char c, char const *set)
 {
 	while (*set)
 	{
@@ -23,7 +23,7 @@ static int is_set(char c, char const *set)
 	return (0);
 }
 
-static int len(char const *s1)
+static int	len(char const *s1)
 {
 	int	i;
 
@@ -33,13 +33,13 @@ static int len(char const *s1)
 	return (i);
 }
 
-char *ft_strtrim(char const *s1, char const *set)
+char	*ft_strtrim(char const *s1, char const *set)
 {
-	int	start;
-	int	end;
-	char *p;
-	int l;
-	int i;
+	int		start;
+	int		end;
+	char	*p;
+	int		l;
+	int		i;
 
 	i = 0;
 	l = 0;
@@ -51,7 +51,7 @@ char *ft_strtrim(char const *s1, char const *set)
 		start++;
 	while (end > start && is_set(s1[end], set))
 		end--;
-	l = start + end + 1;
+	l = end - start + 1;
 	p = (char *)malloc(l + 1);
 	if (!p)
 		return (NULL);
@@ -60,9 +60,16 @@ char *ft_strtrim(char const *s1, char const *set)
 	p[i] = '\0';
 	return (p);
 }
-#include<stdio.h>
-int main()
-{
-	printf("%s\n", ft_strtrim("  hajar  8", " 8"));
-	return 0;
-}
+
+// #include <stdio.h>
+// #include <stdlib.h> 
+
+// char *ft_strtrim(const char *s1, const char *set); 
+
+// int main()
+// {
+//     char *trimmed_str = ft_strtrim("  hajar  8", " 8");
+//     printf("%s\n", trimmed_str);
+//     free(trimmed_str);
+//     return 0;
+// }

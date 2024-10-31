@@ -6,7 +6,7 @@
 /*   By: hes-saou <hes-saou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/28 17:38:26 by hes-saou          #+#    #+#             */
-/*   Updated: 2024/10/29 13:19:42 by hes-saou         ###   ########.fr       */
+/*   Updated: 2024/10/31 23:10:09 by hes-saou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ char	*ft_strdup(const char *s)
 	ss = (char *)malloc(len + 1);
 	if (!ss)
 		return (NULL);
-	while(i < len)
+	while (i < len)
 	{
 		ss[i] = s[i];
 		i++;
