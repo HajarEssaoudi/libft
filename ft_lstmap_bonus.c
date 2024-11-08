@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstmap.c                                        :+:      :+:    :+:   */
+/*   ft_lstmap_bonus.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hes-saou <hes-saou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/07 20:21:58 by hes-saou          #+#    #+#             */
-/*   Updated: 2024/11/07 22:27:23 by hes-saou         ###   ########.fr       */
+/*   Created: 2024/11/08 20:39:23 by hes-saou          #+#    #+#             */
+/*   Updated: 2024/11/09 00:37:01 by hes-saou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ static void	clear(t_list **lst, void (*del)(void *))
 	*lst = NULL;
 }
 
-static t_list	*newNode(void *content)
+static t_list	*new_node(void *content)
 {
 	t_list	*new_node;
 
@@ -55,15 +55,15 @@ static void	add_back(t_list **lst, t_list *new)
 
 t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {
-	t_list *ptr;
-	t_list *new;
+	t_list	*ptr;
+	t_list	*new;
 
 	ptr = NULL;
 	if (!lst || !f || !del)
 		return (NULL);
 	while (lst)
 	{
-		new = newNode(f(lst->content));
+		new = new_node(f(lst->content));
 		if (!new)
 		{
 			clear(&ptr, del);
@@ -74,3 +74,31 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 	}
 	return (ptr);
 }
+
+void	*f(void *ptr)
+{
+	int		i;
+	char	*str;
+
+	i = 0;
+	str = (char *)ptr;
+	while (str[i])
+	{
+		str[i] = str[i] - 32;
+		i++;
+	}
+	return (str);
+}
+
+// void del(void *ptr)
+// {
+//     if (ptr)
+//         free(ptr);
+// }
+// int	main(void)
+// {
+// 	t_list	*str;
+// 	str = ft_lstnew(ft_strdup("a"));
+// 	t_list *tt =  ft_lstmap(str, f, del);
+// 	printf ("%s\n", tt->content);
+// }

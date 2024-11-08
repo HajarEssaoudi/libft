@@ -6,7 +6,7 @@
 /*   By: hes-saou <hes-saou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/29 13:22:01 by hes-saou          #+#    #+#             */
-/*   Updated: 2024/11/02 21:53:14 by hes-saou         ###   ########.fr       */
+/*   Updated: 2024/11/08 23:30:24 by hes-saou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,16 +23,6 @@ static int	is_set(char c, char const *set)
 	return (0);
 }
 
-static int	len(char const *s1)
-{
-	int	i;
-
-	i = 0;
-	while (s1[i])
-		i++;
-	return (i);
-}
-
 char	*ft_strtrim(char const *s1, char const *set)
 {
 	int		start;
@@ -44,7 +34,7 @@ char	*ft_strtrim(char const *s1, char const *set)
 	i = 0;
 	l = 0;
 	start = 0;
-	end = len(s1) - 1;
+	end = ft_strlen(s1) - 1;
 	if (!s1 || !set)
 		return (NULL);
 	while (s1[start] && is_set(s1[start], set))
@@ -64,12 +54,14 @@ char	*ft_strtrim(char const *s1, char const *set)
 // #include <stdio.h>
 // #include <stdlib.h> 
 
-// char *ft_strtrim(const char *s1, const char *set); 
-
-// int main()
+// int    main(void)
 // {
-//     char *trimmed_str = ft_strtrim("popo", "po");
-//     printf("%s\n", trimmed_str);
-//     free(trimmed_str);
-//     return 0;
+//     char    *s1;
+//     char    *set;
+
+//     s1 = "  zizi hajar zziz";
+//     set = " ziz";
+//     char *result = ft_strtrim(s1, set); // Stocker le résultat
+//     printf("%s\n",result);
+//     return (0);
 // }
