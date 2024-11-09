@@ -18,7 +18,7 @@ OBNS = $(BNS:.c=.o)
 all: $(NAME)
 
 $(NAME): $(OBJS)
-	ar rcs $(NAME) $(OBJS) $(OBNS)
+	ar rcs $(NAME) $(OBJS)
 
 %.o: %.c libft.h
 	$(CC) $(CFLAGS) -c $< -o $@
@@ -31,5 +31,5 @@ fclean: clean
 
 re: fclean all
 
-bonus: $(BNS) $(OBNS)
-	ar rcs $(NAME) $(BNS) $(OBNS)
+bonus: $(OBJS) $(BNS) $(OBNS)
+	ar rcs $(NAME) $(OBJS) $(OBNS)

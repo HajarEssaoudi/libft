@@ -6,7 +6,7 @@
 /*   By: hes-saou <hes-saou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/25 17:25:52 by hes-saou          #+#    #+#             */
-/*   Updated: 2024/11/09 00:38:36 by hes-saou         ###   ########.fr       */
+/*   Updated: 2024/11/09 02:32:58 by hes-saou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ int	ft_strncmp(const char *s1, const char *s2, size_t n)
 	size_t	i;
 
 	i = 0;
-	while (s1[i] && s2[i] && i < n)
+	while ((s1[i] || s2[i]) && i < n)
 	{
 		if (s1[i] != s2[i])
 		{
