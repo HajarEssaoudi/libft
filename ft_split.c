@@ -42,6 +42,7 @@ static char	**free_split(char **split, int i)
 {
 	while (i--)
 		free(split[i]);
+	free(split);
 	return (NULL);
 }
 
