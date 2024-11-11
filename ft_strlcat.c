@@ -6,7 +6,7 @@
 /*   By: hes-saou <hes-saou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/26 10:06:21 by hes-saou          #+#    #+#             */
-/*   Updated: 2024/11/07 22:14:53 by hes-saou         ###   ########.fr       */
+/*   Updated: 2024/11/11 16:06:19 by hes-saou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,9 +19,11 @@ size_t	ft_strlcat(char *dst, const char *src, size_t size)
 	size_t	i;
 	size_t	j;
 
-	dlen = ft_strlen(dst);
-	slen = ft_strlen(src);
 	i = 0;
+	slen = ft_strlen(src);
+	if (size == 0)
+		return (slen);
+	dlen = ft_strlen(dst);
 	j = dlen;
 	if (size <= dlen)
 		return (size + slen);

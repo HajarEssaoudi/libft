@@ -6,7 +6,7 @@
 /*   By: hes-saou <hes-saou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/28 15:08:43 by hes-saou          #+#    #+#             */
-/*   Updated: 2024/11/09 01:07:48 by hes-saou         ###   ########.fr       */
+/*   Updated: 2024/11/11 16:22:33 by hes-saou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ char	*ft_strnstr(const char *big, const char *little, size_t len)
 	size_t	i;
 	size_t	j;
 
-	if (!little)
+	if (!*little)
 		return ((char *)big);
 	i = 0;
 	while (big[i] && i < len)

@@ -6,7 +6,7 @@
 /*   By: hes-saou <hes-saou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/08 20:39:23 by hes-saou          #+#    #+#             */
-/*   Updated: 2024/11/09 00:37:01 by hes-saou         ###   ########.fr       */
+/*   Updated: 2024/11/11 14:52:26 by hes-saou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,31 +74,3 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 	}
 	return (ptr);
 }
-
-void	*f(void *ptr)
-{
-	int		i;
-	char	*str;
-
-	i = 0;
-	str = (char *)ptr;
-	while (str[i])
-	{
-		str[i] = str[i] - 32;
-		i++;
-	}
-	return (str);
-}
-
-// void del(void *ptr)
-// {
-//     if (ptr)
-//         free(ptr);
-// }
-// int	main(void)
-// {
-// 	t_list	*str;
-// 	str = ft_lstnew(ft_strdup("a"));
-// 	t_list *tt =  ft_lstmap(str, f, del);
-// 	printf ("%s\n", tt->content);
-// }
